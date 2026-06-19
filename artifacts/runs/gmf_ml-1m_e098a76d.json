@@ -1,0 +1,110 @@
+{
+  "run_id": "gmf_ml-1m_e098a76d",
+  "finished_at_utc": "2026-06-18T14:35:56.365856+00:00",
+  "model": "gmf",
+  "dataset": "ml-1m",
+  "best_epoch": 0,
+  "best_metrics": {
+    "hr@k": 0.10066225165562914,
+    "ndcg@k": 0.045514802898320536,
+    "recall@k": 0.10066225165562914,
+    "mrr@k": 0.02921994901713445
+  },
+  "best_checkpoint": "artifacts/checkpoints/ml-1m_gmf_best.pt",
+  "last_checkpoint": "artifacts/checkpoints/ml-1m_gmf_last.pt",
+  "device": "cpu",
+  "precision": "fp32",
+  "dataset_fingerprint": {
+    "sha256": "9c465e09047c292adaac3ee85395016f0f179f9fd6f5e1583ff5a0408773f087"
+  },
+  "config": {
+    "data": {
+      "root_dir": "Data",
+      "name": "ml-1m"
+    },
+    "model": {
+      "name": "gmf",
+      "embedding_dim": 32,
+      "regularization": 0.0
+    },
+    "train": {
+      "epochs": 1,
+      "batch_size": 256,
+      "num_negatives": 4,
+      "num_workers": 0,
+      "optimizer": "adam",
+      "learning_rate": 0.001,
+      "output_dir": "artifacts/checkpoints",
+      "early_stopping": {
+        "enabled": true,
+        "monitor": "val_ndcg@10",
+        "mode": "max",
+        "patience": 5
+      },
+      "checkpoint": {
+        "save_top_k": 1,
+        "monitor": "val_ndcg@10",
+        "mode": "max"
+      },
+      "export": {
+        "output_dir": "artifacts/exports",
+        "format": "torchscript"
+      },
+      "serving": {
+        "host": "0.0.0.0",
+        "port": 8000
+      }
+    },
+    "eval": {
+      "metrics": [
+        "hr@10",
+        "ndcg@10",
+        "recall@10",
+        "mrr@10"
+      ],
+      "top_k": 10,
+      "num_workers": 0,
+      "eval_batch_size": 1024,
+      "checkpoint_path": ""
+    },
+    "project": {
+      "name": "ncf_recommender",
+      "seed": 42
+    },
+    "logging": {
+      "tensorboard": {
+        "enabled": false,
+        "log_dir": "artifacts/logs/tensorboard"
+      },
+      "wandb": {
+        "enabled": false,
+        "project": "ncf-recommender",
+        "run_name": "baseline-run"
+      }
+    },
+    "runtime": {
+      "device": "auto",
+      "precision": "fp32",
+      "compile_model": false
+    },
+    "resume": {
+      "enabled": false,
+      "checkpoint_path": ""
+    },
+    "profiling": {
+      "enabled": false,
+      "max_profile_steps": 100,
+      "output_dir": "artifacts/profiling"
+    },
+    "tracking": {
+      "run_dir": "artifacts/runs",
+      "save_run_manifest": true,
+      "save_dataset_fingerprint": true,
+      "mlflow": {
+        "enabled": false,
+        "tracking_uri": "",
+        "experiment_name": "ncf-recommender"
+      }
+    }
+  }
+}
