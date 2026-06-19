@@ -1,0 +1,9 @@
+name: neumf
+mf_dim: 32
+mlp_layers: [64, 32, 16, 8]
+reg_mf: 0.0
+reg_layers: [0.0, 0.0, 0.0, 0.0]
+use_pretrain: false
+pretrain:
+  gmf_checkpoint: artifacts/checkpoints/ml-1m_gmf_best.pt
+  mlp_checkpoint: artifacts/checkpoints/ml-1m_mlp_best.pt

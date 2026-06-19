@@ -1,0 +1,3 @@
+name: gmf
+embedding_dim: 32
+regularization: 0.0

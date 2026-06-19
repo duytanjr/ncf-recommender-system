@@ -1,0 +1,42 @@
+defaults:
+  - data: ml1m
+  - model: gmf
+  - train: default
+  - eval: default
+  - _self_
+
+project:
+  name: ncf_recommender
+  seed: 42
+
+logging:
+  tensorboard:
+    enabled: false
+    log_dir: artifacts/logs/tensorboard
+  wandb:
+    enabled: false
+    project: ncf-recommender
+    run_name: baseline-run
+
+runtime:
+  device: auto
+  precision: fp32
+  compile_model: false
+
+resume:
+  enabled: false
+  checkpoint_path: ""
+
+profiling:
+  enabled: false
+  max_profile_steps: 100
+  output_dir: artifacts/profiling
+
+tracking:
+  run_dir: artifacts/runs
+  save_run_manifest: true
+  save_dataset_fingerprint: true
+  mlflow:
+    enabled: false
+    tracking_uri: ""
+    experiment_name: ncf-recommender

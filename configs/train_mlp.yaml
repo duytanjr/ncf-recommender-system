@@ -1,0 +1,6 @@
+defaults:
+  - config
+  - override model: mlp
+  - override train: default
+  - override eval: default
+  - _self_

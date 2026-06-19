@@ -1,0 +1,5 @@
+defaults:
+  - config
+  - override model: mlp
+  - override eval: default
+  - _self_

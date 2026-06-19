@@ -1,0 +1,5 @@
+defaults:
+  - config
+  - override model: neumf
+  - override eval: default
+  - _self_

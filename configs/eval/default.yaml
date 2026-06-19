@@ -1,0 +1,5 @@
+metrics: [hr@10, ndcg@10, recall@10, mrr@10]
+top_k: 10
+num_workers: 0
+eval_batch_size: 1024
+checkpoint_path: ""

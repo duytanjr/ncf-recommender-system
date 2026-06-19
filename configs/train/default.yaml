@@ -1,0 +1,24 @@
+epochs: 20
+batch_size: 256
+num_negatives: 4
+num_workers: 0
+optimizer: adam
+learning_rate: 0.001
+output_dir: artifacts/checkpoints
+early_stopping:
+  enabled: true
+  monitor: val_ndcg@10
+  mode: max
+  patience: 5
+checkpoint:
+  save_top_k: 1
+  monitor: val_ndcg@10
+  mode: max
+
+export:
+  output_dir: artifacts/exports
+  format: torchscript
+
+serving:
+  host: 0.0.0.0
+  port: 8000

@@ -1,0 +1,6 @@
+defaults:
+  - config
+  - override model: gmf
+  - override train: default
+  - override eval: default
+  - _self_

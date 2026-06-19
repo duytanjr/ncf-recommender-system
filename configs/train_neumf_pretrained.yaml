@@ -1,0 +1,9 @@
+defaults:
+  - config
+  - override model: neumf
+  - override train: default
+  - override eval: default
+  - _self_
+
+model:
+  use_pretrain: true
