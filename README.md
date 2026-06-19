@@ -8,6 +8,8 @@ pinned: false
 ---
 # ncf_recommender
 
+[![Live Demo](https://img.shields.io/badge/🤗%20Live%20Demo-HuggingFace%20Spaces-blue)](https://huggingface.co/spaces/duytanjr/ncf-recommender)
+
 Production-oriented reimplementation of Neural Collaborative Filtering (NCF) with modern PyTorch tooling.
 
 This project modernizes the original `hexiangnan/neural_collaborative_filtering` codebase into a modular system for:
