@@ -1,3 +1,11 @@
+---
+title: NCF Recommender
+emoji: 🎬
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
 # ncf_recommender
 
 Production-oriented reimplementation of Neural Collaborative Filtering (NCF) with modern PyTorch tooling.
