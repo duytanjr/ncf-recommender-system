@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY pyproject.toml README.md ./
 COPY src ./src
 COPY configs ./configs
+COPY app ./app
 
 RUN pip install --upgrade pip && pip install -e .[demo]
 
