@@ -91,3 +91,6 @@ testpaths = ["tests"]
 [tool.coverage.run]
 branch = true
 source = ["src/ncf_recommender"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ncf_recommender"]
