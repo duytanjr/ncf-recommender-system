@@ -14,6 +14,6 @@ COPY pyproject.toml README.md ./
 COPY src ./src
 COPY configs ./configs
 
-RUN pip install --upgrade pip && pip install -e .
+RUN pip install --upgrade pip && pip install -e .[demo]
 
-CMD ["python", "-m", "ncf_recommender.cli.train", "--help"]
+CMD ["streamlit", "run", "app/streamlit_app.py", "--server.port", "7860", "--server.address", "0.0.0.0"]
